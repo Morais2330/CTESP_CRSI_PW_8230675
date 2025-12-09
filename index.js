@@ -3,30 +3,36 @@ import http from 'http';
 import router from './router.mjs';
 import config from './config.js';
 import mongoose from 'mongoose';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-// Configuração da porta
+// Configurações de caminhos (Necessário para o Render encontrar as pastas)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 const port = process.env.PORT || 4000;
 
-// Conexão ao MongoDB
+// Conexão Mongo
 mongoose.connect(config.db)
     .then(() => console.log('Conexão bem-sucedida com o MongoDB'))
     .catch((err) => console.error('Erro de conexão:', err));
 
 const app = express();
-
-// --- NOVO: Configurações essenciais ---
-
-// 1. Permite ao servidor ler dados de formulários (Login/Registo)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 2. DIZ AO SERVIDOR ONDE ESTÁ O SEU SITE (HTML/CSS)
-// A pasta chama-se 'tf-app' segundo o seu print
-app.use(express.static('tf-app'));
+// --- A MUDANÇA IMPORTANTE ESTÁ AQUI ---
+// Diz ao servidor para usar a pasta 'build' dentro de 'tf-app'
+app.use(express.static(path.join(__dirname, 'tf-app', 'build')));
 
-// --------------------------------------
-
+// As suas rotas de API (Login, etc)
 app.use(router);
+
+// Qualquer outra rota devolve o React (resolve o erro Cannot GET)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'tf-app', 'build', 'index.html'));
+});
+// --------------------------------------
 
 const server = http.createServer(app);
 
