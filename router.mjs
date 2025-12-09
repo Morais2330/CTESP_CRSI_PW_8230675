@@ -2,14 +2,11 @@
 import express from 'express';
 const router = express.Router();
 
-// Rota GET para página inicial
-router.get('/', (req, res) => {
-    res.send('Hello, world!');
-});
+// Apaguei a rota GET '/' daqui para não bloquear o seu site
 
 // Rota POST para registro de usuário
 router.post('/auth/register', (req, res) => {
-    console.log(req.body); // Verifica se está recebendo os dados corretamente
+    console.log(req.body);
     res.send('Registrado com sucesso!');
 });
 
