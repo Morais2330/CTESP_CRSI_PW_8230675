@@ -1,0 +1,36 @@
+/* MyAccount.css */
+.my-account-container {
+    padding: 20px;
+  }
+  
+  .user-data, .purchase-history {
+    margin-bottom: 20px;
+  }
+  
+  .user-data h2, .purchase-history h2 {
+    margin-bottom: 10px;
+  }
+  
+  .user-data p, .purchase-history h3, .purchase-history p {
+    margin: 5px 0;
+  }
+  
+  .purchase-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .purchase-item h3 {
+    margin-bottom: 10px;
+  }
+  
+  .purchase-item ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .purchase-item li {
+    margin: 5px 0;
+  }

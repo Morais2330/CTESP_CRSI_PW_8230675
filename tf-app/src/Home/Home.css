@@ -1,0 +1,60 @@
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.Home {
+  text-align: center;
+}
+
+.Home-header {
+  background-color: #5c3900;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding: 20px;
+}
+
+.Home-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.Home-logo {
+  height: 40vmin;
+  pointer-events: none;
+  margin-bottom: 10px;
+}
+
+.Home-text {
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.Home-link {
+  color: #ffffff;
+  text-decoration: underline;
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .Home-logo {
+      animation: Home-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes Home-logo-spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}

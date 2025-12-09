@@ -1,0 +1,74 @@
+/* src/Catalogo/Catalogo.css */
+
+/* Estilo geral para o componente */
+.Catalogo {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  /* Estilo para o cabeçalho do catálogo */
+  .Catalogo-header {
+    background-color: #5c3900;
+    padding: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Estilo para o logo do catálogo */
+  .Catalogo-logo {
+    height: 80px;
+    margin-right: 20px;
+  }
+  
+  /* Estilo para o título do catálogo */
+  .Catalogo-title {
+    font-size: 2em;
+    font-weight: bold;
+  }
+  
+  /* Estilo para os detalhes do catálogo */
+  .Catalogo-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Estilo para cada livro */
+  .book {
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 180px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .book:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilo para a imagem do livro */
+  .book-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+  
+  /* Estilo para o título do livro */
+  .book-title {
+    margin-top: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+  }
+  
+   
